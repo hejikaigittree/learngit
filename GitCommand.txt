@@ -1,20 +1,22 @@
-login : hejikaigittree
-email : hezhian_git2020@yeah.net
-password : zh13an26he77
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-$git config --global                 配置git仓库
-$git init                            初始化仓库
-$git add                             给仓库添加要管理的文件->stage（把工作区文件修改放到暂存区）
-$git commit -m                       提交内容到仓库（把暂存区的所有修改提交到分支）
-$git status                          查看仓库当前的状态
-$git diff                            查看改变的内容
-$git log						     查看最近到最远提交日志
-$git log --pretty=oneline            查看最近到最远提交日志(简单)
-$git reflog                          查看历史日志
-$git reset --hard commit_id          回退版本，改变Head指针指向的提交命令ID 节点 $git reset --hard HEAD^^^^
-$git reset HEAD readme.txt           可以把暂存区的修改撤销掉（unstage)，重新放回工作区。
-$git checkout -- file                放弃工作区修改内容,就是让这个工作区文件回到最近一次git commit 或者 git add 时的状态
-$cat filename                        查看工作区文件内容
+
+$git config --global                                                    配置git仓库
+$git init                                                               初始化仓库
+$git add                                                                给仓库添加要管理的文件->stage（把工作区文件修改放到暂存区）
+$git commit -m                                                          提交内容到仓库（把暂存区的所有修改提交到分支）
+$git status                                                             查看仓库当前的状态
+$git diff                                                               查看改变的内容
+$git log						                                        查看最近到最远提交日志
+$git log --pretty=oneline                                               查看最近到最远提交日志(简单)
+$git reflog                                                             查看历史日志
+$git reset --hard commit_id                                             回退版本，改变Head指针指向的提交命令ID 节点 $git reset --hard HEAD^^^^
+$git reset HEAD readme.txt                                              可以把暂存区的修改撤销掉（unstage)，重新放回工作区。
+$git checkout -- file                                                   放弃工作区修改内容,就是让这个工作区文件回到最近一次git commit 或者 git add 时的状态
+$cat filename                                                           查看工作区文件内容
+$ssh-keygen -t rsa -C "hezhian_git2020@yeah.net"                        生成公私 rsa key Pair.
+$git remote add origin git@github.com:hejikaigittree/learngit.git       关联远程GitHub仓库
+$git push -u origin master                                              第一次将本地主分支推送到相关联远程仓库
+$git push origin master                                                 将本地主分支推送到相关联远程仓库
+$git clone git@github.com:hejikaigittree/gitskills.git                  初次开发时，将远程仓库克隆至本地仓库
 1.当对文件连续修改时。提交内容只有被提交到缓存区的修改内容。
 2.自修改后还没有被放到暂存区，现在撤销修改就回回到和版本库一模一样的状态。
 3.已经将修改添加到暂存区，然后又对工作区进行修改，那么，再撤销修改就会回到添加到暂存区后的状态.
@@ -24,3 +26,7 @@ $cat filename                        查看工作区文件内容
 场景3. 已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退操作，不过前提时没有把本地版本库推送到远程版本库。
 远程仓库：
 https://github.com/hejikaigittree
+使用git bash 给自己电脑生成一个SSH 公钥 和私钥。 公钥的内容加进GitHub中。
+为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的。而不是别人冒充的。而Git支持SSH协议。所以GitHub只要知道了你的公钥，就可以确定只有你自己才能推送。
+当然GitHub允许你添加多个key。在GitHub上免费托管的Git仓库，任何人都可以看到，但只有你自己才能改。
+如果不想别人看到。一个交钱，一个自己搭建Git服务器。
