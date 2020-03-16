@@ -17,6 +17,13 @@ $git remote add origin git@github.com:hejikaigittree/learngit.git       关联�
 $git push -u origin master                                              第一次将本地主分支推送到相关联远程仓库
 $git push origin master                                                 将本地主分支推送到相关联远程仓库
 $git clone git@github.com:hejikaigittree/gitskills.git                  初次开发时，将远程仓库克隆至本地仓库
+$git checkout -b dev                                                    创建并切换新分支
+$git branch                                                             查看当前分支
+$git merge dev                                                          合并指定分支到当前分支。
+$git checkout <branch>                                                  切换到指定分支
+$git switch -c dev                                                      新版本git无歧义的创建并切换到新分支的指令
+$git switch master                                                      切换到主分支
+git  branch -d  <name>                                                  删除指定分支
 1.当对文件连续修改时。提交内容只有被提交到缓存区的修改内容。
 2.自修改后还没有被放到暂存区，现在撤销修改就回回到和版本库一模一样的状态。
 3.已经将修改添加到暂存区，然后又对工作区进行修改，那么，再撤销修改就会回到添加到暂存区后的状态.
