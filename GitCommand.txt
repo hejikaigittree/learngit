@@ -23,7 +23,8 @@ $git merge dev                                                          合并�
 $git checkout <branch>                                                  切换到指定分支
 $git switch -c dev                                                      新版本git无歧义的创建并切换到新分支的指令
 $git switch master                                                      切换到主分支
-git  branch -d  <name>                                                  删除指定分支
+$git  branch -d  <name>                                                 删除指定分支
+$git log --graph --pretty==oneline --abbrev-commit                      分支合并图，简单提交ID ,一行显示日志。
 1.当对文件连续修改时。提交内容只有被提交到缓存区的修改内容。
 2.自修改后还没有被放到暂存区，现在撤销修改就回回到和版本库一模一样的状态。
 3.已经将修改添加到暂存区，然后又对工作区进行修改，那么，再撤销修改就会回到添加到暂存区后的状态.
@@ -37,3 +38,4 @@ https://github.com/hejikaigittree
 为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的。而不是别人冒充的。而Git支持SSH协议。所以GitHub只要知道了你的公钥，就可以确定只有你自己才能推送。
 当然GitHub允许你添加多个key。在GitHub上免费托管的Git仓库，任何人都可以看到，但只有你自己才能改。
 如果不想别人看到。一个交钱，一个自己搭建Git服务器。
+合并主分支之前先切换到主分支后再合并。
