@@ -19,12 +19,18 @@ $git push origin master                                                 将本�
 $git clone git@github.com:hejikaigittree/gitskills.git                  初次开发时，将远程仓库克隆至本地仓库
 $git checkout -b dev                                                    创建并切换新分支
 $git branch                                                             查看当前分支
-$git merge dev                                                          合并指定分支到当前分支。
+$git merge dev                                                          合并指定分支到当前分支。fast forward
 $git checkout <branch>                                                  切换到指定分支
 $git switch -c dev                                                      新版本git无歧义的创建并切换到新分支的指令
 $git switch master                                                      切换到主分支
-$git  branch -d  <name>                                                 删除指定分支
+$git branch -d  <name>                                                  删除指定分支
 $git log --graph --pretty==oneline --abbrev-commit                      分支合并图，简单提交ID ,一行显示日志。
+$git merge --no-ff -m"merge with no-ff" dev                             使用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并看不出来曾经做过合并
+$git stash                                                              可以把当前工作现场存储起来，等以后恢复现场后继续工作
+$git stash list                                                         查看存储的工作现场
+$git stash apply                                                        恢复stash存储的内容，stash内容并不删除
+$git stash pop                                                          恢复stash存储的内容，同时把stash内容也删除了
+$git cherry-pick  commit-id                                             复制一个特定的提交到当前分支
 1.当对文件连续修改时。提交内容只有被提交到缓存区的修改内容。
 2.自修改后还没有被放到暂存区，现在撤销修改就回回到和版本库一模一样的状态。
 3.已经将修改添加到暂存区，然后又对工作区进行修改，那么，再撤销修改就会回到添加到暂存区后的状态.
@@ -39,3 +45,7 @@ https://github.com/hejikaigittree
 当然GitHub允许你添加多个key。在GitHub上免费托管的Git仓库，任何人都可以看到，但只有你自己才能改。
 如果不想别人看到。一个交钱，一个自己搭建Git服务器。
 合并主分支之前先切换到主分支后再合并。
+实际开发中，我们应该按照几个基本原则进行分支管理:
+首先，master分支应该时非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
+干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本。
+你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。
