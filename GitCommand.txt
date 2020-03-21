@@ -36,7 +36,12 @@ $git branch -D dev                                                      丢弃�
 $git remote                                                             查看远程库信息
 $git remote -v                                                          显示远程库详细信息
 $git pull                                                               拉取远程仓库之前，需要指定本地dev分支与远程origin/dev分支的链接。
-$git branch --set-upstream-to=origin/dev dev                            指定本地dev分支与远程origin/dev分支之间的链接。
+$git branch --set-upstream-to=origin/dev dev                            指定本地dev分支与远程origin/dev分支之间的链接
+$git tag v1.0                                                           创建标签 CommitID =HEAD
+$git tag                                                                查看所有标签
+$git tag v0.9 commit_id                                                 给指定的提交打标签
+$git show v0.9                                                          查看标签信息
+$git tag -a v0.1 -m "version v0.1 released" commit-id                   给指定提交标签加入说明文字
 1.当对文件连续修改时。提交内容只有被提交到缓存区的修改内容。
 2.自修改后还没有被放到暂存区，现在撤销修改就回回到和版本库一模一样的状态。
 3.已经将修改添加到暂存区，然后又对工作区进行修改，那么，再撤销修改就会回到添加到暂存区后的状态.
