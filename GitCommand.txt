@@ -18,6 +18,7 @@ $git push -u origin master                                              第一�
 $git push origin master                                                 将本地主分支推送到相关联远程仓库
 $git clone git@github.com:hejikaigittree/gitskills.git                  初次开发时，将远程仓库克隆至本地仓库
 $git checkout -b dev                                                    创建并切换新分支
+$git checkout -b dev origin/dev                                         创建远程origin的dev分支到本地
 $git branch                                                             查看当前分支
 $git merge dev                                                          合并指定分支到当前分支。fast forward
 $git checkout <branch>                                                  切换到指定分支
