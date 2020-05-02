@@ -80,3 +80,7 @@ feature分支是否推送到远程，取决于你是否和你的小伙伴合作�
 建本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name
 从远程抓取分支，使用git pull，如果有冲突，要先解决冲突。
 运行scm-sever.bat后才能打开http://localhost:8080/scm/
+remote repository
+1.Github远程仓库 name:origin address：git@github.com:hejikaigittree/learngit.git
+2.本地Git服务器name:test_local  address:http://localhost:8080/scm/git/test
+java 需要配置系统环境。
